@@ -1,2 +1,2 @@
 # ZUSprogram
-A open source rool for making great concert programs from Klasifikace.
+A open source tool for making great concert programs from Klasifikace.
