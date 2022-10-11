@@ -59,5 +59,5 @@ class Tables():
         elif type == "numbers":
             for i in range(len(self.table_2["Číslo"])):
                 self.table_2["Číslo"][i] = f'{self.table_2["Číslo"][i]}.'
-
+        #I will continue here tommorow
 
