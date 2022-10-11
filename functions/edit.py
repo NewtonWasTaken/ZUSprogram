@@ -6,7 +6,7 @@ class Tables():
 
     # Merging some table_1 informations to table_2
     def merge(self):
-        #Handeling more Skladba or Žáci
+        #Handeling more Skladba or Žáci then the rest
         for i in range(len(self.table_1["Autor"])):
             if self.table_1["Č."][i] == 0.0 and self.table_1["Autor"] != 0:
                 self.table_1["Autor"][i-1] = self.table_1["Autor"][i-1] + " \n" + self.table_1["Autor"][i]
