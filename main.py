@@ -20,19 +20,7 @@ tb.merge()
 #Formats Poznámka and Číslo in table
 tb.format(type="korepetice")
 
-
-
-#Merging Poznámka cells to Předmět cells and editing numbering system
-for i in range(len(table_2["Poznámka"])):
-    if table_2["Poznámka"][i] != 0.0:
-        table_2["Předmět"][i] = table_2["Předmět"][i] + " \n" + table_2["Poznámka"][i]
-    table_2["Číslo"][i] = f'{table_2["Číslo"][i]}.'
-
-
-
-
-
-#Exports data to final table
+#Exports data to final dataframe
 table_dataframe = pandas.DataFrame(tb.sort())
 
 

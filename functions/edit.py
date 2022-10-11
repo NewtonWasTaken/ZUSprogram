@@ -49,13 +49,13 @@ class Tables():
         return (final_table)
 
     def format(self, type="korepetice"):
-        #formats number and korepetice
+        # Merging Poznámka cells to Předmět cells and editing numbering system
         if type == "korepetice":
             for i in range(len(self.table_2["Poznámka"])):
                 if self.table_2["Poznámka"][i] != 0.0:
                     self.table_2["Předmět"][i] = self.table_2["Předmět"][i] + " \n" + self.table_2["Poznámka"][i]
                 self.table_2["Číslo"][i] = f'{self.table_2["Číslo"][i]}.'
-        #formats only number
+        #editing number system only
         elif type == "numbers":
             for i in range(len(self.table_2["Číslo"])):
                 self.table_2["Číslo"][i] = f'{self.table_2["Číslo"][i]}.'
