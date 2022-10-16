@@ -48,6 +48,7 @@ class Tables():
             final_table[i] = self.table_2[i]
         return (final_table)
 
+
     def format(self, type="korepetice"):
         # Merging Poznámka cells to Předmět cells and editing numbering system
         if type == "korepetice":
@@ -59,5 +60,18 @@ class Tables():
         elif type == "numbers":
             for i in range(len(self.table_2["Číslo"])):
                 self.table_2["Číslo"][i] = f'{self.table_2["Číslo"][i]}.'
-        #I will continue here tommorow
 
+    def get_class(self, classes):
+        for i in range(len(self.table_2["Ročník"])):
+            if "," not in self.table_2["Žák (žáci)"][i]:
+                name = self.table_2["Žák (žáci)"][i].split(" ")
+                for j in range(len(classes["Příjmení"])):
+                    if classes["Příjmení"][j] == name[1] and classes["Jméno"][j] == name[0]:
+                        if "," not in classes["Ročník"][j]:
+                            self.table_2["Ročník"][i] = classes["Ročník"][j]
+                        else:
+                            rocnik = classes["Ročník"][j].split(",")
+                            predmety = classes["Studium"][j].split(",")
+                            for k in range(len(predmety)):
+                                if predmety[k] == self.table_2["Předmět"][i]:
+                                    self.table_2["Ročník"][i] = rocnik[k]
